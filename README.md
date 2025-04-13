@@ -1,20 +1,20 @@
-### AI-Powered Overthinking Recovery App
+## AI-Powered Overthinking Recovery App
 
 An intelligent wellness platform designed to help users manage overthinking, reduce stress, and improve emotional well-being through AI-driven emotion detection of both text and speech, interactive chatbot, personalized storytelling, and a supportive community.
 
-### Features
+## Features
 
 ###  AI-Powered Chatbot
 - Responds to users with **emotion-aware voice responses**.
 - Supports both **text and voice-based** conversations.
 
-## Speech Emotion Recognition using Deep Learning
+### Speech Emotion Recognition using Deep Learning
 
 - Unlock the power of human emotions hidden in voice! This project is a **Deep learning-based Speech Emotion Recognition system** built using Python. 
 - It classifies emotional states such as **anger, disgust, fear, happiness, pleasant, surprise, sadness, neutral**, by analyzing audio signals and extracting sound features.
   
 
-## Features in Emotion Detection from speech
+### Features in Emotion Detection from speech
 
 - Audio preprocessing & feature extraction
 - Deep learning model for classifying emotions
@@ -23,7 +23,7 @@ An intelligent wellness platform designed to help users manage overthinking, red
 - Modular codebase for easy reuse and improvement
 
 
-## Technologies & Libraries
+### Technologies & Libraries
 
 - **Python 3.10**
 - **TensorFlow / Keras** – Deep learning framework
@@ -33,7 +33,7 @@ An intelligent wellness platform designed to help users manage overthinking, red
 - **Scikit-learn** – Evaluation metrics & preprocessing
 
 
-## Audio Features Used
+### Audio Features Used
 
 - **MFCC (Mel-frequency cepstral coefficients)**
 - **Chroma frequencies**
@@ -43,13 +43,13 @@ An intelligent wellness platform designed to help users manage overthinking, red
 ---
 
 
-### Text Emotion Detection 
+## Text Emotion Detection 
 
 This is a **Text Emotion Classifier** built with Python and Streamlit. It uses a pre-trained machine learning pipeline (`text_emotion.pkl`) to analyze user-input text and predict the underlying **emotion** behind it, along with the **confidence score** and a visualized probability distribution.
 
 
 
-##  What It Does
+###  What It Does
 
 - Takes raw text input from the user
 - Predicts the **dominant emotion** from the text
@@ -59,7 +59,7 @@ This is a **Text Emotion Classifier** built with Python and Streamlit. It uses a
 
 
 
-## Tech Stack
+### Tech Stack
 
 - **Python 3.10**
 - **Streamlit** – for building interactive UI
@@ -70,7 +70,7 @@ This is a **Text Emotion Classifier** built with Python and Streamlit. It uses a
 
 ---
 
-### Community Support
+## Community Support
 - Connect with other users experiencing similar struggles.
 - Encourages safe, empathetic communication within a monitored forum.
 - Supports active users on online
@@ -79,29 +79,29 @@ This is a **Text Emotion Classifier** built with Python and Streamlit. It uses a
 ---
 
 
-### Entertainment
+## Entertainment
 
-## Personalized Story Generator
+### Personalized Story Generator
   - If a user misses someone, the app can generate a heartwarming story involving that person.
   - Stories are genre-based (e.g., fantasy) and visually enriched using dynamically created templates.
   - User can also listen to the story in audio
 
-## Blogs
+### Blogs
   - Our blog section is more than just articles—it's a carefully curated knowledge hub designed to reduce the overthinking level of users
   - Explore engaging, and covers different genre
 
-## Meditation
+### Meditation
   - A **gamified meditation system** where users can practice mindfulness, reduce stress, and build healthy habits.
   - Get gently nudged to stay on track with your mindfulness journey
 
-## Balloon Therapy
+### Balloon Therapy
   - An emotional release feature which offers users a simple, gamified way to manage their emotions by **visualizing and interacting** with them.
   - Type their feelings into a virtual balloon. Pop the balloon when angry (a satisfying emotional release) . Fly the balloon away when sad (symbolizing letting go or moving on)
 
 
 ---
 
-### Dashboard & Analytics
+## Dashboard & Analytics
 - Analysed emotions from text and speech
 - Weekly emotion and stress-level analytics.
 - Displays development in areas like meditation, blogging, and mood tracking.
@@ -111,13 +111,13 @@ This is a **Text Emotion Classifier** built with Python and Streamlit. It uses a
 
 ---
 
-### Working Flow of the project
+## Working Flow of the project
 
 An all-in-one platform that helps users manage and overcome overthinking through AI, speech emotion recognition, gamified wellness tools, and a vibrant support community.
 
 ---
 
-## 🔐 Authentication & Onboarding
+### 🔐 Authentication & Onboarding
 
 - **Login/Signup:** Users can log in or create an account.
 - **Psychological Assessment:** During signup, users are presented with a set of psychology-based questions (different for men and women).
@@ -125,7 +125,7 @@ An all-in-one platform that helps users manage and overcome overthinking through
 
 ---
 
-## 🏠 Main Dashboard Features
+### 🏠 Main Dashboard Features
 
 After logging in, users are redirected to the **Main Page** that includes:
 
@@ -137,7 +137,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-## 🤖 AI Chatbot
+### 🤖 AI Chatbot
 
 - Engage in a conversation with an **AI-powered chatbot**.
 - Users can **type messages** and receive intelligent emotional support.
@@ -146,7 +146,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-## 🗣️ Voice Talk (Speech Emotion Detection)
+### 🗣️ Voice Talk (Speech Emotion Detection)
 
 - Users can **speak directly to the AI bot**.
 - The app uses deep learning models to detect **emotions from speech and text**.
@@ -154,7 +154,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-## 🌐 Community Support
+### 🌐 Community Support
 
 - A safe space for users to connect and support one another.
 - Features:
@@ -165,7 +165,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-## 🎭 Entertainment Section
+### 🎭 Entertainment Section
 
 - This provides the remedy for get rid of overthinking
 - It has Meditation, Balloon Therapy, Personalized Story Generator, Blog Section
@@ -173,7 +173,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-## 📊 Dashboard & Analytics
+### 📊 Dashboard & Analytics
 
 - Emotion tracking from **both text and speech input**.
 - Weekly analytics display:
@@ -187,14 +187,14 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-### Tech Stack
+## Tech Stack
 
-### Frontend
+## Frontend
 - **React.js** (with functional components and hooks)
 - **CSS** for styling
 - **Framer Motion** for animations
 
-### Backend (API & Integration)
+## Backend (API & Integration)
 - **Node.js** with **Express.js**
 - **MongoDB** for data storage
 - **Python Flask** microservice for text emotion detection
@@ -208,7 +208,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 
 
-### 📦 Libraries & Tools Used
+## 📦 Libraries & Tools Used
 
 - **scikit-learn, TensorFlow, Keras** – Text Emotion Detection Model
 - **Librosa, numpy, pandas, scikit-learn** - Speech Emotion Detection Model
@@ -223,7 +223,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 
 ---
 
-### 🧪 Future Enhancements
+## 🧪 Future Enhancements
 
 - Expand emotion classification for multi-label scenarios
 - Improve voice synthesis for more human-like tone
@@ -233,7 +233,7 @@ After logging in, users are redirected to the **Main Page** that includes:
 ---
 
 
-### 👩‍💻 Developed By
+## 👩‍💻 Developed By
 
 - **Uvajanani R P** – MERN Stack Developer 
 - **Yuhanncia Mary S** – Web Developer | AI Enthusiast
