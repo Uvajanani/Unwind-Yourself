@@ -1,0 +1,45 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #d3f5e9, #f5ecd3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #4CAF50;
+}
+
+.feature-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.feature-grid a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+  background: #e6f7f1;
+  border-radius: 12px;
+  transition: 0.3s;
+  font-weight: bold;
+  color: #333;
+}
+
+.feature-grid a:hover {
+  background: #c0f0dd;
+  transform: scale(1.05);
+}

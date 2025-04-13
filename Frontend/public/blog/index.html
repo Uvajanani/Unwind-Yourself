@@ -1,0 +1,109 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unwind Yourself - Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="voice.js"></script>
+  <style>
+    .subtitle {
+      text-align: center;
+      font-size: 1.5rem;
+      color: hsl(214, 78%, 2%);
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+    }
+    .blog-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .blog-card {
+      width: 30%;
+      text-align: center;
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 12px;
+      color: black;
+      text-decoration: none;
+    }
+    .blog-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .card-title {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    #search-input {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 80%;
+      border-radius: 10px;
+      font-size: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="heading">🌟 UNWIND YOURSELF BLOG 🌟</h1>
+  <p class="subtitle">"Sometimes, all you need is a story to feel seen 💫"</p>
+
+  <!-- 🔍 Search Bar -->
+  <input type="text" id="search-input" placeholder="Search by genre (e.g., crime, feelgood, fantasy...)" oninput="filterBlogs()" />
+
+  <div class="blog-row">
+    <a href="reality.html" class="blog-card" data-tags="Awarness moral suspense">
+      <img src="./reality.jpg" alt="REALITY" />
+      <div class="card-title">REALITY</div>
+      <button onclick="speakStory('REALITY')">🔊</button>
+    </a>
+
+    <a href="res.html" class="blog-card" data-tags="thriller">
+      <img src="./res.jpg" alt="RESPONSIVE OR REGRETIVE" />
+      <div class="card-title">RESPONSIVE OR REGRETIVE</div>
+      <button onclick="speakStory('RESPONSIVE OR REGRETIVE')">🔊</button>
+    </a>
+
+    <a href="strangeplanet.html" class="blog-card" data-tags="fantasy Sciencefiction">
+      <img src="./strangeplanet.jpg" alt="STRANGEST PLANET" />
+      <div class="card-title">STRANGEST PLANET</div>
+      <button onclick="speakStory('STRANGEST PLANET')">🔊</button>
+    </a>
+
+    <a href="whocreated.html" class="blog-card" data-tags="mystery normal suspense">
+      <img src="./whocreated.jpg" alt="WHO CREATED" />
+      <div class="card-title">WHO CREATED</div>
+      <button onclick="speakStory('WHO CREATED')">🔊</button>
+    </a>
+
+    <a href="unsolved.html" class="blog-card" data-tags="crime mystery thriller">
+      <img src="./unsolved.jpg" alt="THE UNSOLVED" />
+      <div class="card-title">THE UNSOLVED</div>
+      <button onclick="speakStory('THE UNSOLVED')">🔊</button>
+    </a>
+
+    <a href="life.html" class="blog-card" data-tags="feelgood romance">
+      <img src="./life.jpg" alt="LIFE MAY END BUT" />
+      <div class="card-title">LIFE MAY END BUT</div>
+      <button onclick="speakStory('LIFE MAY END BUT...')">🔊</button>
+    </a>
+  </div>
+
+  <!-- 🔍 Filter Script -->
+  <script>
+    function filterBlogs() {
+      const input = document.getElementById("search-input").value.toLowerCase();
+      const blogCards = document.querySelectorAll(".blog-card");
+
+      blogCards.forEach(card => {
+        const tags = card.getAttribute("data-tags").toLowerCase();
+        card.style.display = tags.includes(input) || input === "" ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>

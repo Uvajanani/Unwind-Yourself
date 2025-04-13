@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yoga Video Relaxation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1><b>  UNWIND YOURSELF</b></h1>
+  <h1>🧘‍♀️ Yoga for the Soul</h1>
+
+  <div class="filter-buttons">
+    <button onclick="filterVideos('all')">All</button>
+    <button onclick="filterVideos('morning')">🌅 Morning</button>
+    <button onclick="filterVideos('relax')">🌙 Relax</button>
+    <button onclick="filterVideos('energy')">⚡ Energy</button>
+  </div>
+
+  <div class="video-container">
+    <div class="video-card morning">
+      <h2>🌅 Morning Stretch</h2>
+      <video controls>
+        <source src="videos/morning.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-card relax">
+      <h2>🌙 Relaxation Flow</h2>
+      <video controls>
+        <source src="videos/relax.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-card energy">
+      <h2>⚡ Energy Booster</h2>
+      <video controls>
+        <source src="videos/energy.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

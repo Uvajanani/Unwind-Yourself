@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balloon Pop - Angry/Sad</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎈 Balloon Thought Release</h1>
+
+    <label for="mood-select">Select Your Mood:</label>
+    <select id="mood-select" onchange="changeBalloonColor()">
+      <option value="">--Choose--</option>
+      <option value="angry">😡 Angry</option>
+      <option value="sad">😢 Sad</option>
+    </select>
+
+    <textarea id="thought" placeholder="Write your thoughts here..." oninput="updateBalloonText()"></textarea>
+
+    <div id="balloon" class="balloon">
+      <span id="balloon-text"></span>
+    </div>
+
+    <button onclick="popBalloon()">Release Balloon</button>
+
+    <p id="popped" class="hidden"></p>
+
+    <audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
+    <audio id="fly-sound" src="fly.mp3" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

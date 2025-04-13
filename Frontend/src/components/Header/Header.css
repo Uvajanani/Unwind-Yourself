@@ -1,0 +1,88 @@
+.header-title{
+    text-align: center;
+}
+
+.hero {
+    text-align: center;
+    padding: 3px 0;
+}
+
+.hero img {
+    max-width: 1000px;
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.header-img p {
+    margin-bottom: 10px;
+    
+}
+
+.header-title {
+    padding: 25px 10px 12px 10px;
+    font-size: 28px;
+    background: linear-gradient(90deg, #d4d10c, #50aec8, #e613a7); /* Blue, Green, Violet */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+
+.gender-selection {
+    margin: 25px;
+    text-align: center;
+}
+
+.gender-selection p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.gender-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gender-buttons button {
+    font-size: 16px; 
+    padding: 12px 30px; 
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+.male-btn {
+    background-color: #75b5fa; 
+    color: white;
+}
+
+.male-btn:hover {
+    background-color: #075eba;
+    transform: scale(1.05);
+}
+
+
+.female-btn {
+    background-color: #ed667f; 
+    color: white;
+}
+
+.female-btn:hover {
+    background-color: #d60c3e;
+    transform: scale(1.05);
+}
+
+.prefer-not-btn {
+    background-color: #7f8c8d;
+    color: white;
+    margin-top: 20px;
+}
+
+.prefer-not-btn:hover {
+    background-color: #5d6d7e;
+    transform: scale(1.05);
+}

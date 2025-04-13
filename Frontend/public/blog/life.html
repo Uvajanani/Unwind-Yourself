@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LIFE MAY END BUT..</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #121212;
+      color: #f4f4f4;
+      line-height: 1.8;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #f54291;
+      margin-bottom: 40px;
+    }
+
+    .chapter {
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .chapter h2 {
+      color: #80cbc4;
+      margin-bottom: 10px;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #ccc;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .highlight {
+      color: #fbc02d;
+      font-weight: bold;
+    }
+
+    .diary {
+      background: #1e1e1e;
+      border-left: 4px solid #f54291;
+      padding: 15px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+  </style>
+  <script src="voice.js"></script>
+</head>
+<body>
+    <img src="./life.jpg" alt="LIFE MAY END BUT.." class="blog-image" />
+
+  <h1>LIFE MAY END BUT..</h1>
+  <div id="story-text">
+
+  <div class="chapter">
+    <h2>Prologue</h2>
+    <p>In 1985, a family of four lived quietly in a small town. Nila, a passionate author and subeditor, raised her two children—<span class="highlight">Rishi</span> and <span class="highlight">Diya</span>—with love and strength. The children's father, <span class="highlight">Naveen</span>, a renowned businessman, worked abroad and remained only a name and a photo in their home.</p>
+  </div>
+
+  <div class="chapter">
+    <h2>Unseen Father, Unmatched Mother</h2>
+    <p>Rishi, at 12, grew to resent the absence of his father, whereas 5-year-old Diya still longed to meet him. Their mother, Nila, never let them feel unloved. Her letters to Naveen and her personal <span class="highlight">diary</span> were the only links to a love that once felt eternal.</p>
+  </div>
+
+  <div class="chapter">
+    <h2>A Question from Diya</h2>
+    <p>"When will Daddy come home?" Diya asked one night. Nila, hiding her pain, answered, "Very soon." But Diya’s response—“You always say that”—cut deeper than she expected. To distract her daughter, Nila began telling a story…</p>
+  </div>
+
+  <div class="chapter">
+    <h2>The Story of Priya and Hari</h2>
+    <p>Priya and Hari were young lovers who dreamed of a life built by their own hands. While Hari became a manager, Priya grew into a gifted writer. Just as marriage neared, tragedy struck. Hari died in an accident, leaving Priya shattered.</p>
+    <div class="diary">
+      "Instead of marrying someone else, I chose to live with his memory. I adopted two kids and made him their unseen father."
+    </div>
+    <p>Priya raised them with so much love that they never questioned their origins. They were her life, her healing, her purpose.</p>
+  </div>
+
+  <div class="chapter">
+    <h2>Realization</h2>
+    <p>As Diya drifted into sleep, Rishi found a diary. In its pages, he uncovered truths that shook his soul. The characters in the story—<span class="highlight">Priya and Hari</span>—were not fiction. They were his <span class="highlight">mother and father</span>.</p>
+    <p><span class="highlight">Naveen</span> never worked abroad. He was long gone. And Nila... she was the brave mother who chose love over loss, truth over trauma, and gave them a life full of light, even when hers had gone dark.</p>
+  </div>
+
+  <div class="quote">
+    Life may end... but love writes its own stories.
+  </div>
+</div>
+  <button onclick="narrateFullStory()">🎙️ Narrate Story</button>
+  <button onclick="pauseStory()">⏸ Pause</button>
+  <button onclick="resumeStory()">▶ Resume</button>
+  
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+  
+  .container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  textarea {
+    width: 90%;
+    height: 80px;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    resize: none;
+  }
+  
+  .balloon {
+    width: 100px;
+    height: 120px;
+    background: #ff6b81;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin: 20px auto;
+    position: relative;
+    transition: background 0.3s, transform 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+  
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #555;
+    transform: translateX(-50%);
+  }
+  
+  button {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  .burst {
+    animation: pop 0.4s forwards;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .fly-away {
+    animation: fly 1s forwards;
+  }
+  
+  @keyframes fly {
+    0% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-300px);
+      opacity: 0;
+    }
+  }
+  
+  .hidden {
+    display: none;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #444;
+  }
+  

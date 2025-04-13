@@ -1,0 +1,30 @@
+
+  .forest-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mood-buttons button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .mood-buttons button:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .forest img {
+    margin-top: 30px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.5s;
+  }

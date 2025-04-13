@@ -1,0 +1,256 @@
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f8f5;
+}
+
+.questions-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    padding: 20px;
+    position: relative;
+}
+
+.questions-header img {
+    cursor: pointer;
+    width: 20px;
+}
+
+.questions-header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.questions-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.questions-box {
+    width: 50%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.questions-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.questions-box ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.questions-box li {
+    background: #f9f8f3;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.questions-box li:hover {
+    background: #eae8df;
+}
+
+.questions-box li label {
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.questions-box input {
+    display: none;
+}
+
+.questions-box input:checked + label{
+    background: #ddf4d7;
+    border-radius: 10px;
+}
+
+
+.questions-box button {
+    width: 100%;
+    padding: 15px;
+    background: #7d72f9;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.questions-box button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.gender-options {
+    display: flex;
+    gap: 10px;
+}
+
+.gender-option {
+    padding: 10px 75px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+}
+
+.gender-option:hover {
+    border-color: #5a4bfe;
+}
+
+.gender-option.selected {
+    border-color: #5a4bfe;
+    background-color: #ddf4d7;
+}
+
+.hidden-radio {
+    display: none;
+}
+
+.age-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.age-input:focus {
+    border-color: #5a4bfe;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+.start-button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background: #7d72f9;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.start-button:hover {
+    background: #5a4bfe;
+}
+
+.questions-container label {
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.questions-container h1 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #7d72f9;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: rgb(248, 240, 240);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #312f2f;
+    font-weight: 500;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #555;
+}
+
+.popup span {
+    color: #5a4bfe;
+}
+
+.popup strong {
+    color: #f97272;
+}
+
+.popup button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #7d72f9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.popup button:hover {
+    background: #5a4bfe;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

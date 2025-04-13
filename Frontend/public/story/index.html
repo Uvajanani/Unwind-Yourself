@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Personalized Story Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1><b>UNWIND YOURSELF</b></h1>
+    <h1>🌈 Personalized Story Generator</h1>
+    <form id="storyForm">
+
+      <label>Genre:
+        <select id="storyType" required>
+          <option value="">Select Genre</option>
+          <option value="romance">Romance</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="feelGood">Feel Good</option>
+          <option value="thriller">Thriller</option>
+          <option value="mystery">Mystery</option>
+          <option value="adventure">Adventure</option>
+        </select>
+      </label>
+
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="favPerson" placeholder="Favorite Person" required />
+
+      <label>What do you like most about them:
+        <select id="favThingAboutPerson" required>
+          <option value="">Choose one</option>
+          <option value="care">Care</option>
+          <option value="hugs">Hugs</option>
+          <option value="love">Love</option>
+          <option value="peace">Peace</option>
+          <option value="silence">Silence</option>
+        </select>
+      </label>
+
+      <label>Pet Type:
+        <select id="pet" required>
+          <option value="">Select Pet</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="parrot">Parrot</option>
+          <option value="hamster">Hamster</option>
+        </select>
+      </label>
+
+      <input type="text" id="place" placeholder="Favorite Place" required />
+
+      <label>Your Best Trait:
+        <select id="trait" required>
+          <option value="">Choose a Trait</option>
+          <option value="kindness">Kindness</option>
+          <option value="creativity">Creativity</option>
+          <option value="bravery">Bravery</option>
+          <option value="patience">Patience</option>
+          <option value="humor">Humor</option>
+          <option value="loyalty">Loyalty</option>
+          <option value="honesty">Honesty</option>
+          <option value="wisdom">Wisdom</option>
+        </select>
+      </label>
+
+      <input type="text" id="food" placeholder="Favorite Food" required />
+
+      <label>Time of Day:
+        <select id="timeOfDay" required>
+          <option value="">Select Time</option>
+          <option value="morning">Morning</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="evening">Evening</option>
+          <option value="night">Night</option>
+        </select>
+      </label>
+
+      <label>Dream Word:
+        <select id="dreamWord" required>
+          <option value="">Choose a Word</option>
+          <option value="hope">Hope</option>
+          <option value="peace">Peace</option>
+          <option value="freedom">Freedom</option>
+          <option value="joy">Joy</option>
+          <option value="growth">Growth</option>
+        </select>
+      </label>
+
+      <input type="text" id="quote" placeholder="Favorite Quote" required />
+
+      <label>Favorite Music:
+        <select id="music" required>
+          <option value="">Choose Genre</option>
+          <option value="romance">Romance</option>
+          <option value="melody">Melody</option>
+          <option value="pop">Pop</option>
+          <option value="folk">Folk</option>
+          <option value="instrumental">Instrumental</option>
+        </select>
+      </label>
+
+      <label>Weather:
+        <select id="weather" required>
+          <option value="">Select Weather</option>
+          <option value="sunny">Sunny</option>
+          <option value="rainy">Rainy</option>
+          <option value="cloudy">Cloudy</option>
+          <option value="snowy">Snowy</option>
+          <option value="stormy">Stormy</option>
+        </select>
+      </label>
+
+      <button type="submit">✨ Generate Story</button>
+    </form>
+
+    <div id="storyResult"></div>
+  </div>
+
+  <script src="story_templates.js"></script>
+  <script src="main_script.js"></script>
+  <script src="voice.js"></script>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="calm-music.mp3" type="audio/mpeg">
+  </audio>
+  
+</body>
+</html>
+
+
+

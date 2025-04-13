@@ -1,0 +1,64 @@
+
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 2rem;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  input, select, button {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #ff80ab;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff4081;
+  }
+  
+  #storyResult {
+    margin-top: 2rem;
+    background: #fff0f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  .audio-controls {
+    margin-top: 10px;
+  }
+  
+  .audio-controls button {
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: #9e4c9e;
+    border: 1px solid #800651;
+    cursor: pointer;
+  }
+  
+  .audio-controls button:hover {
+    background-color: #b11365;
+  }
+  
+  

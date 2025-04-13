@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Line Healing Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Healing Zone!</h1>
+    
+    <p>Let's brighten your day with a personalized message!</p>
+
+    <!-- Input form for gathering user details -->
+    <form id="userForm">
+      <label for="userName">Your Name:</label>
+      <input type="text" id="userName" placeholder="Enter your name" required>
+      
+      <label for="userMood">How are you feeling today?</label>
+      <input type="text" id="userMood" placeholder="Happy, Sad, Calm, Angry" required>
+
+      <button type="submit">Generate Healing Message</button>
+    </form>
+
+    <div id="healingOutput">
+      <h2>Your Healing Message:</h2>
+      <p id="generatedMessage"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

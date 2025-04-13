@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Forest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="forest-container">
+    <h1>🌳 Mood Forest</h1>
+    <p>Select your mood to grow your forest (one per session):</p>
+    <div class="mood-buttons">
+      <button onclick="updateTree('happy')">😊 Happy</button>
+      <button onclick="updateTree('sad')">😢 Sad</button>
+      <button onclick="updateTree('angry')">😡 Angry</button>
+      <button onclick="updateTree('calm')">😌 Calm</button>
+    </div>
+    <div class="forest">
+      <img id="treeImage" src="images/defaulttree.png" alt="Mood Tree" />
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

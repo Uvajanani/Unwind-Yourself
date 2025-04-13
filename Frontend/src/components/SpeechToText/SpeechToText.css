@@ -1,0 +1,19 @@
+.speech-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.speech-container {
+    text-align: center;
+    margin-top: 50px
+}
+
+.speech-container p {
+    font-size: 12px;
+}

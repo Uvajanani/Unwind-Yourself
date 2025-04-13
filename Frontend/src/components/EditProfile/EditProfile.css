@@ -1,0 +1,175 @@
+.edit-profile-container {
+    width: 350px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.edit-profile-container h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.profile-header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.profile-header h2 {
+    text-align: center;
+    margin-left: 60px;
+}
+
+.profile-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-image-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.edit-photo, .profile-remove {
+    background: #f2f2f2;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-photo {
+    background-color: #bbb6f3;
+}
+.profile-remove {
+    background-color: rgb(245, 180, 180);
+}
+
+.edit-photo:hover {
+    background: #9891e3;
+}
+
+.profile-remove:hover {
+    background-color: rgb(247, 132, 132);
+}
+
+.profile-info h4 {
+    color: #666;
+    font-weight: 600;
+}
+
+.profile-name, .profile-email, .profile-password {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-name label, .profile-email label, .profile-password label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.edit-name, .edit-email, .edit-password {
+    color: #7c70fc;
+    cursor: pointer;
+}
+
+.edit-name:hover, .edit-email:hover, .edit-password:hover {
+    text-decoration: underline;
+}
+
+input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.save-account {
+    display: block;
+    margin: 20px auto; 
+    text-align: center;
+    width: 60%;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #7c70fc;
+    border-radius: 20px;
+}
+
+.avatar-selection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.avatar-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.avatar-option:hover {
+    transform: scale(1.1);
+    border: 2px solid #7c70fc;
+}
+
+.password-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.password-inputs input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+.save-password {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    background-color: #b3adfb;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.save-password:hover {
+    background-color: #9891e3;
+}

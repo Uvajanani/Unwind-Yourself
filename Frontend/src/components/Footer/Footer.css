@@ -1,0 +1,134 @@
+.footer {
+    background: #dbe0eea2;
+    color: #5a5151;
+    padding: 40px 20px 10px 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin:auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #cdbde8;
+  }
+  
+  .footer-brand {
+    text-align: left;
+    max-width: 250px;
+    font-weight: 500;
+  }
+  
+  .footer-brand h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2b292b;
+    font-weight: 500;
+  }
+  
+  .footer-brand p {
+    font-size: 14px;
+    color: #44444d;
+  }
+  
+  .courses {
+    text-align: left;
+  }
+  
+  .courses h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #282c28dd;
+  }
+  
+  .courses p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #9e8a8a;
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .footer-links .quick {
+    font-size: 18px;
+    color: #282c28dd;
+    font-weight: 500;
+  }
+
+  .footer-links li a {
+    color: #9e8a8a;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-links li a:hover {
+    color: #2a2928;
+  }
+
+  .social-links .follow {
+    font-size: 18px;
+    color: #282c28dd;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .footer-socials {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-socials img {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .footer-socials img:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    font-size: 14px;
+    color: #6f6767;
+  }
+  
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-brand img {
+    width: 50px; /* adjust based on your logo size */
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .footer-text h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+     /* or your brand color */
+  }
+  
+  .footer-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #827878; /* subtle gray for footer text */
+  }
+  

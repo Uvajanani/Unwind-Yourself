@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quotes Wall</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wall-container">
+    <h1>💬 Quotes Wall</h1>
+    <p id="greeting">Welcome to your healing wall 🌈</p>
+    <select id="moodSelector">
+      <option value="">🌤️ Choose Your Mood</option>
+      <option value="happy">😊 Happy</option>
+      <option value="sad">😢 Sad</option>
+      <option value="angry">😡 Angry</option>
+      <option value="calm">😌 Calm</option>
+    </select>
+    <div class="quote-grid" id="quoteGrid"></div>
+    <audio id="voiceover" controls style="display:none"></audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* General container styling */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Input and button styling */
+  input, button {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styling the healing message area */
+  #healingOutput {
+    margin-top: 30px;
+  }
+  
+  /* Animation for the form inputs */
+  input, button {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animation for the healing message */
+  #generatedMessage {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #4CAF50;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMessage 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInMessage {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Smooth hover effect for inputs */
+  input:focus, button:focus {
+    border-color: #4CAF50;
+    outline: none;
+    animation: focusAnimation 0.3s ease-in-out;
+  }
+  
+  @keyframes focusAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
