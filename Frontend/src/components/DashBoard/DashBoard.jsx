@@ -8,7 +8,6 @@ import MonthlyPieChart from '../MonthlyPieChart/MonthlyPieChart';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-// Import what you need from Chart.js
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,7 +18,6 @@ import {
   Legend
 } from 'chart.js';
 
-// Register components with Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -38,12 +36,12 @@ const DashBoard = ({userId}) => {
       });
     
       useEffect(() => {
-        console.log("Fetching developed areas for userId:", userId); // ✅ Check this value
+        console.log("Fetching developed areas for userId:", userId); 
       
         const fetchDevelopedAreas = async () => {
           try {
             const res = await axios.get(`http://localhost:4000/api/developedArea/developedArea/${userId}`);
-            console.log("Developed areas response:", res.data); // ✅ See what comes back
+            console.log("Developed areas response:", res.data); 
       
             if (res.data.success) {
               setDevelopedAreas(res.data.developedAreas);
@@ -61,11 +59,11 @@ const DashBoard = ({userId}) => {
 
       useEffect(() => {
       const fetchEmotions = async () => {
-        console.log("Fetching developed areas for userId:", userId); // ✅ Check this value
+        console.log("Fetching developed areas for userId:", userId);
 
       try {
         const response = await axios.get(`http://localhost:4000/api/emotion/getUser/${userId}`);
-        setEmotionData(response.data.probabilities); // <-- Make sure you’re saving probabilities
+        setEmotionData(response.data.probabilities); 
       } catch (err) {
         console.error("Error fetching emotion data:", err);
       }
@@ -102,14 +100,12 @@ const DashBoard = ({userId}) => {
           const textProb = textRes.data.probabilities;
           const speechProb = speechRes.data.probabilities;
   
-          // Simulate 7 days of data by repeating the same data or tweaking slightly
           const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   
           const dummyWeeklyData = days.map((day, i) => ({
             day,
             textEmotion: {
               ...textProb,
-              // Optional: Slight variation to simulate changing emotion
               joy: (textProb.joy || 0) + i * 0.1,
             },
             speechEmotion: {
@@ -139,7 +135,6 @@ useEffect(() => {
       const text = textRes.data.probabilities || {};
       const speech = speechRes.data.probabilities || {};
 
-      // Merge and average
       const emotions = new Set([...Object.keys(text), ...Object.keys(speech)]);
       const merged = Array.from(emotions).map((emotion) => {
         const val1 = parseFloat(text[emotion]) || 0;
@@ -304,13 +299,6 @@ useEffect(() => {
                 </div>
             </div>
 
-            {/* <div className='journal'>
-                <h3>Journal</h3>
-                <div className='journal-item'>
-                    <img src={assets.journal} alt="" />
-                    <p>Write your journal here</p>
-                </div>
-            </div> */}
         </div>
 
         <footer className="about-footer">

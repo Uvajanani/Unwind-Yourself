@@ -93,7 +93,7 @@ const Community = ({currentUser}) => {
       if (res.data.success) {
         const savedMessage = res.data.message;
         setMessages((prevMessages) => [...prevMessages, savedMessage]);
-        socket.emit("sendMessage", savedMessage); // Notify other users
+        socket.emit("sendMessage", savedMessage); 
       }
     } catch (error) {
       console.error("Error sending message:", error);
@@ -146,16 +146,14 @@ useEffect(() => {
 useEffect(() => {
   console.log("🧐 Checking currentUser:", currentUser);
 
-  if (!currentUser?._id) return; // Ensure user exists
+  if (!currentUser?._id) return; 
 
-  // Emit event to join the community
   socket.emit("joinCommunity", {
     id: currentUser._id,
     name: currentUser.name,
-    avatar: currentUser.avatar || avatars.avatar1, // Ensure avatar is valid
+    avatar: currentUser.avatar || avatars.avatar1, 
   });
 
-  // Listen for active users update from server
   socket.on("updateActiveUsers", (users) => {
     console.log("🔄 Updated Active Users:", users);
     setActiveUsers(users);
@@ -197,7 +195,7 @@ useEffect(() => {
       const res = await axios.delete(`http://localhost:4000/api/messages/delete/${messageId}`);
       if (res.data.success) {
         setMessages((prevMessages) => prevMessages.filter((msg) => msg._id !== messageId));
-        socket.emit("deleteMessage", messageId); // Notify other users to remove it
+        socket.emit("deleteMessage", messageId); 
       }
     } catch (error) {
       console.error("Error deleting message:", error);
@@ -208,8 +206,8 @@ useEffect(() => {
     try {
       const res = await axios.delete("http://localhost:4000/api/messages/deleteAll");
       if (res.data.success) {
-        setMessages([]); // Clear all messages for current user
-        socket.emit("deleteAllMessages"); // Notify all users
+        setMessages([]); 
+        socket.emit("deleteAllMessages"); 
       }
     } catch (error) {
       console.error("Error deleting all messages:", error);
@@ -230,7 +228,7 @@ useEffect(() => {
 
   useEffect(() => {
     const handleAllMessagesDeleted = () => {
-        setMessages([]); // Clear messages in UI for all users
+        setMessages([]);
     };
 
     socket.on("deleteAllMessages", handleAllMessagesDeleted);

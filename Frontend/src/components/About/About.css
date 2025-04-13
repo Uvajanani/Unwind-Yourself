@@ -10,7 +10,7 @@
   
   .about-header h1 {
     font-size: 30px;
-    background: linear-gradient(90deg, #d4d10c, #50aec8, #e613a7); /* Blue, Green, Violet */
+    background: linear-gradient(90deg, #d4d10c, #50aec8, #e613a7); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     margin-bottom: 2px;

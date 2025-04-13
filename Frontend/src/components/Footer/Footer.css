@@ -114,7 +114,7 @@
   }
   
   .footer-brand img {
-    width: 50px; /* adjust based on your logo size */
+    width: 50px;
     height: auto;
     object-fit: contain;
   }
@@ -123,12 +123,11 @@
     margin: 0;
     font-size: 1.3rem;
     font-weight: 500;
-     /* or your brand color */
   }
   
   .footer-text p {
     margin: 0;
     font-size: 0.9rem;
-    color: #827878; /* subtle gray for footer text */
+    color: #827878; 
   }
   

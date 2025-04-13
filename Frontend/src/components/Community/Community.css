@@ -38,7 +38,6 @@
     border-radius: 10px;
 }
 
-/* --- Common Chat Message Box --- */
 .community-chat-msg {
     display: flex;
     align-items: center;
@@ -48,10 +47,9 @@
 .my-message {
     align-self: flex-end;
     display: flex;
-    /* flex-direction: row-reverse; Ensures text comes first, image second */
     text-align: right;
     justify-content: flex-end;
-    gap: 10px; /* Adds spacing between text and image */
+    gap: 10px; 
 }
 .my-message .community-chat-text {
     background: #ddf8de;
@@ -66,10 +64,10 @@
 .other-message {
     align-self: flex-start;
     display: flex;
-    flex-direction: row; /* Ensures image comes first, text second */
+    flex-direction: row; 
     text-align: left;
     justify-content: flex-start;
-    gap: 10px; /* Adds spacing between image and text */
+    gap: 10px; 
 }
 .other-message .community-chat-text {
     background: #e9f5fe;
@@ -81,7 +79,6 @@
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Images */
 .community-chat-img img {
     width: 40px;
     height: 40px;
@@ -89,7 +86,6 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Timestamp */
 .timestamp {
     font-size: 12px;
     color: #555;
@@ -97,7 +93,6 @@
     text-align: right;
 }
 
-/* Typing Indicator */
 .typing-indicator {
     font-size: 14px;
     color: #666;
@@ -106,7 +101,6 @@
     font-style: italic;
 }
 
-/* Input Area */
 .community-input {
     display: flex;
     align-items: center;
@@ -141,7 +135,6 @@
     margin-left: 20px;
 }
 
-/* Emoji Picker */
 .emoji-picker {
     position: absolute;
     bottom: 60px;
@@ -149,7 +142,6 @@
     z-index: 1000;
 }
 
-/* Responsive Styles */
 @media (max-width: 600px) {
     .community-chat {
         width: 100%;
@@ -164,7 +156,6 @@
     }
 }
 
-/* More Options (Dropdown) */
 .more-options {
     position: relative;
   }
@@ -175,7 +166,6 @@
     cursor: pointer;
   }
   
-  /* Dropdown Menu */
   .dropdown-menu {
     position: absolute;
     top: 30px;
@@ -190,7 +180,6 @@
     animation: fadeIn 0.2s ease-in-out;
   }
   
-  /* Dropdown Buttons */
   .dropdown-item {
     padding: 10px 16px;
     border: none;
@@ -206,7 +195,6 @@
     background: #f1f1f1;
   }
   
-  /* Logout Button */
   .logout {
     color: red;
     font-weight: 600;
@@ -229,13 +217,11 @@
     opacity: 1;
   }
 
-  /* Custom scrollbar */
 div {
   scrollbar-width: thin;
   scrollbar-color: #888 #f0f0f0;
 }
 
-/* WebKit Browsers */
 div::-webkit-scrollbar {
   width: 6px;
 }
@@ -250,9 +236,7 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
   
-  
-  /* Fade-In Animation */
-  @keyframes fadeIn {
+    @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-5px);

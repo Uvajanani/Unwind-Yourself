@@ -40,14 +40,12 @@ const Login = () => {
             if (response.data.success) {
                 const { token, username, user } = response.data;
     
-                // ✅ Save token & user details in localStorage
                 localStorage.setItem("token", token);
-                localStorage.setItem("userEmail", user.email);  // Store email
-                localStorage.setItem("user", JSON.stringify(user)); // Store user object
+                localStorage.setItem("userEmail", user.email);  
+                localStorage.setItem("user", JSON.stringify(user));
     
-                // ✅ Update React Context
                 setToken(token);
-                setUser(user); // Ensure full user object is stored
+                setUser(user); 
     
                 toast.success(
                     curState === "Sign Up" ? "Account created successfully!" : "Logged in successfully!",

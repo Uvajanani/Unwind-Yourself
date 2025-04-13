@@ -1,25 +1,21 @@
 document.getElementById('userForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
+    event.preventDefault(); 
     
     const userName = document.getElementById('userName').value;
     const userMood = document.getElementById('userMood').value;
   
-    // Generate a personalized healing message based on input
     const healingMessage = generateHealingMessage(userName, userMood);
     
-    // Display the generated message with animation
     const generatedMessageElement = document.getElementById('generatedMessage');
     generatedMessageElement.textContent = healingMessage;
     
-    // Trigger the fade-in animation on the message
-    generatedMessageElement.style.opacity = 0; // Reset opacity
+    generatedMessageElement.style.opacity = 0; 
     setTimeout(() => {
       generatedMessageElement.style.opacity = 1;
-    }, 10); // Small timeout to trigger the CSS animation
+    }, 10); 
   });
   
   function generateHealingMessage(name, mood) {
-    // Logic for generating different responses based on mood
     if (mood.toLowerCase() === "happy") {
       return `Hey ${name}, keep shining brightly! Your positivity is contagious! 🌟`;
     } else if (mood.toLowerCase() === "sad") {

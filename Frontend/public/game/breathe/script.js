@@ -4,7 +4,7 @@ const countdown = document.getElementById('countdown');
 const finish = document.getElementById('finish');
 
 let position = 0;
-let step = 50; // ✅ Increased for faster run
+let step = 50;
 let jump = false;
 
 const finishPosition = finish.offsetLeft - 50;

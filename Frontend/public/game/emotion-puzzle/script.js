@@ -42,11 +42,11 @@ const emotions = [
           result.textContent = '🎉 Correct match!';
           matchCount++;
           if (matchCount === emotions.length) {
-            result.textContent = '🎉 You’ve completed the Emotion Puzzle!';
+            result.textContent = 'You’ve completed the Emotion Puzzle!';
             gameEnded = true;
           }
         } else {
-          result.textContent = '❌ Try again!';
+          result.textContent = 'Try again!';
         }
         selectedFace = null;
       };

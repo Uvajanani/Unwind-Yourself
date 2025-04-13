@@ -9,7 +9,6 @@ const ContextProvider = ({ children }) => {
     const initialUser = localStorage.getItem("chatUser") ? JSON.parse(localStorage.getItem("chatUser")) : null;
     const [user, setUser] = useState(initialUser);
     const [id, setId] = useState(initialUser?._id || "");
-    // const [emotion, setEmotion] = useState("");
 
 
     useEffect(() => {
@@ -27,17 +26,15 @@ const ContextProvider = ({ children }) => {
     }, [user]);
 
 
-    const [input, setInput] = useState("");                 // input
-    const [recentPrompt, setRecentPrompt] = useState("");   // send button
-    const [prevPrompts, setPrevPrompts] = useState([]);     // input history
-    const [showResult, setShowResult] = useState(false);    // true -> hide the main page 
-    const [loading, setLoading] = useState(false);          // loading with animation   
-    const [resultData, setResultData] = useState("");       // display result
+    const [input, setInput] = useState("");                 
+    const [recentPrompt, setRecentPrompt] = useState("");   
+    const [prevPrompts, setPrevPrompts] = useState([]);     
+    const [showResult, setShowResult] = useState(false);   
+    const [loading, setLoading] = useState(false);            
+    const [resultData, setResultData] = useState("");     
     const [emotionData, setEmotionData] = useState(null);
 
-    // const { botReply, predictedEmotion } = await run(input);
-    // setResultData(botReply);
-    // setEmotion(predictedEmotion);
+
 
 
     const delayPara = (index, nextWord) => {
@@ -61,7 +58,7 @@ const ContextProvider = ({ children }) => {
             });
             if (!response.ok) throw new Error("Failed to fetch emotion data");
             const data = await response.json();
-            return data; // { emotion: "happy", probabilities: { happy: 0.8, sad: 0.1, angry: 0.1 } }
+            return data; 
         } catch (error) {
             console.error("Emotion detection error:", error);
             return null;
@@ -86,17 +83,6 @@ const ContextProvider = ({ children }) => {
         }
       };  
       
-      // const handleSend = async () => {
-      //   setLoading(true);
-      //   setRecentPrompt(input);
-        
-      //   const { botReply, predictedEmotion } = await run(input);
-        
-      //   setResultData(botReply);
-      //   setEmotion(predictedEmotion);
-      //   setLoading(false);
-      //   setShowResult(true);
-      // };
       
     
 
@@ -114,12 +100,10 @@ const ContextProvider = ({ children }) => {
         }
       
         try {
-          // Get chatbot + emotion analysis from Gemini.js
           response = await run(message);
       
           console.log("API Response:", response);
       
-          // Show response
           let botReply = response.botReply || "Something went wrong.";
           let responseArray = botReply.split("**");
           let newResponse = "";
@@ -135,7 +119,6 @@ const ContextProvider = ({ children }) => {
             delayPara(i, newResponseArray[i] + " ");
           }
       
-          // Emotion data already returned by Gemini
           const emotionResult = {
             predicted_emotion: response.predictedEmotion,
             emoji: response.emoji,

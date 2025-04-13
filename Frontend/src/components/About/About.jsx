@@ -5,13 +5,11 @@ import { assets } from "../../assets/assets";
 const About = () => {
   return (
     <div className="about-container">
-      {/* Header Section */}
       <header className="about-header">
         <h1>About Unwind Yourself</h1>
         <p className="about-para">Your calm corner in a noisy world.</p>
       </header>
 
-      {/* Why Section */}
       <section className="about-why">
         <img
           src={assets.calmPerson}
@@ -36,7 +34,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="meet-our-team">
         <h2>Meet our team</h2>
         <div className="team-grid">
@@ -87,7 +84,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Promise Section */}
       <section className="about-promise">
         <h2>Our Promise</h2>
         <div className="promise-grid">
@@ -108,7 +104,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="about-footer">
         © {new Date().getFullYear()} Unwind Yourself. All rights reserved.
       </footer>

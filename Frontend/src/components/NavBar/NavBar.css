@@ -41,12 +41,12 @@
 .logo {
     display: flex;
     align-items: center;
-    height: 60px; /* Adjust based on your navbar height */
+    height: 60px; 
     padding: 0 1rem;
   }
   
   .logo img {
-    height: 100%; /* Scales to fit the container height */
+    height: 100%;
     width: auto;
     object-fit: contain;
   }

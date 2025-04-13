@@ -20,7 +20,7 @@ h1 {
   font-size: 40px;
   transition: left 0.5s ease-in-out, top 0.3s ease;
   animation: run-animation 0.5s steps(2) infinite;
-  transform: scaleX(-1); /* ✅ Flip to face forward (right side) */
+  transform: scaleX(-1); 
 }
 
 .jump {

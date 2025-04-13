@@ -36,7 +36,7 @@ export const updateDevelopedArea = async (req, res) => {
 
     res.json({ success: true, message: `${area} progress updated to ${value}%`, user });
   } catch (error) {
-    console.error("🔥 Error updating developed area:", error.message);
+    console.error("Error updating developed area:", error.message);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };

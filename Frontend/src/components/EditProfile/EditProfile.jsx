@@ -4,7 +4,7 @@ import "./EditProfile.css";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:4000"); // Change URL as needed
+const socket = io("http://localhost:4000"); 
 
 const EditProfile = () => {
     const avatarList = Object.values(avatars);

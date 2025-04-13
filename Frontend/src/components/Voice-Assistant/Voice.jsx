@@ -14,11 +14,9 @@ const Voice = () => {
   const handleMicClick = async () => {
     console.log("🎤 Mic clicked");
     if (recording) {
-      // Stop recording
       mediaRecorderRef.current.stop();
       setRecording(false);
     } else {
-      // Start recording
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         const mediaRecorder = new MediaRecorder(stream);
@@ -71,7 +69,6 @@ const Voice = () => {
               
                   setEmotion(primaryEmotion);
               
-                  // 🔥 Send both label and full emotion scores
                   await fetch("http://localhost:4000/api/save-speech-emotion", {
                     method: "POST",
                     headers: {

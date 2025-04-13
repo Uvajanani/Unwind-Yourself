@@ -22,7 +22,7 @@
 .header-title {
     padding: 25px 10px 12px 10px;
     font-size: 28px;
-    background: linear-gradient(90deg, #d4d10c, #50aec8, #e613a7); /* Blue, Green, Violet */
+    background: linear-gradient(90deg, #d4d10c, #50aec8, #e613a7); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
 }

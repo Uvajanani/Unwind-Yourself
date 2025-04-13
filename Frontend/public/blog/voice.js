@@ -1,7 +1,7 @@
 let currentUtterance = null;
 
 function speakStory(text) {
-  window.speechSynthesis.cancel(); // stop previous speech
+  window.speechSynthesis.cancel(); 
   const utterance = new SpeechSynthesisUtterance(text);
   const voices = window.speechSynthesis.getVoices();
 

@@ -8,18 +8,15 @@ const createToken = (id) => {
     return jwt.sign({id}, process.env.JWT_SECRET)
 }
 
-// login user
 export const loginUser = async(req, res) => {
     const {email, password} = req.body
     try {
         
-        // Check if the user exist
         const user = await userModel.findOne({email})
         if(!user) {
             return res.json({success : false, message : "User doesn't exist"})
         }
 
-        // Check if the password match with the existing password
         const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch) {
             return res.json({success : false, message : "Invalid credentials"})
@@ -35,39 +32,32 @@ export const loginUser = async(req, res) => {
 }
 
 
-// register user
 export const registerUser = async(req, res) => {
     const {name, password, email} = req.body;
     try {
         
-        // checking if user already exists
         const exists = await userModel.findOne({email})
         if(exists) {
             return res.json({success : false, message : "User already exists"})
         }
         
-        // validating email format 
         if(!validator.isEmail(email)) {
             return res.json({success : false, message : "Please enter a valid email"})
         }
 
-        // checking if it is strong password or not
         if (!validator.isStrongPassword(password, { minLength: 8, minNumbers: 1, minUppercase: 1 })) {
             return res.json({ success: false, message: "Weak password! Include uppercase, number, and special characters." });
         }   
 
-        //hashing user password
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
 
-        // create new user
         const newUser = new userModel({
             name : name,
             email : email,
             password : hashedPassword
         })
 
-        // save the user
         const user = await newUser.save()
         const token = createToken(user._id)
         res.json({success : true, token, user})
@@ -98,7 +88,7 @@ export const updateUserDetails = async (req, res) => {
             return res.json({ success: false, message: "User not found" });
         }
 
-        console.log("Updated user:", user); // Debug log
+        console.log("Updated user:", user); 
         res.json({ success: true, message: "User details updated successfully", user });
     } catch (error) {
         console.error("Error updating user details:", error);

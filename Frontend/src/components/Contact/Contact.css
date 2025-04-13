@@ -1,4 +1,3 @@
-/* Header */
 header {
     width: 100%;
     text-align: center;
@@ -11,7 +10,6 @@ header {
     letter-spacing: 1px;
   }
   
-  /* Container */
   .container {
     display: flex;
     justify-content: center;
@@ -19,7 +17,6 @@ header {
     width: 100%;
   }
   
-  /* Contact Card */
   .contact-card {
     display: flex;
     width: 100%;
@@ -30,13 +27,11 @@ header {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   }
   
-  /* Left and Right Sections */
   .left-section, .right-section {
     width: 50%;
     padding: 30px 30px;
   }
   
-  /* Form Section */
   .form-section h2, .details-section h2, .right-section .map-section h2 {
     font-size: 23px;
     margin-bottom: 10px;
@@ -94,7 +89,6 @@ header {
     text-align: center;
   }
   
-  /* Details Section */
   .details-section p {
     color: #444;
     font-size: 16px;
@@ -106,7 +100,6 @@ header {
     color: #111;
   }
   
-  /* Map */
   .map-section {
     margin-top: 30px;
   }
@@ -125,7 +118,6 @@ header {
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
   }
   
-  /* Footer Navigation (optional) */
   nav ul {
     list-style: none;
     padding: 0;
@@ -150,7 +142,6 @@ header {
     text-decoration: underline;
   }
   
-  /* Responsive Design */
   @media (max-width: 900px) {
     .contact-card {
       flex-direction: column;

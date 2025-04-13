@@ -5,7 +5,6 @@
     padding: 4rem 2rem;
   }
   
-  /* Header */
   .offer-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -18,7 +17,7 @@
   }
   
   .offer-header .highlight {
-    color: #2d3eff; /* Highlighted text */
+    color: #2d3eff;
   }
   
 
@@ -28,7 +27,6 @@
     gap: 2rem;
   }
   
-  /* Card */
   .offer-card {
     background-color: #f4f4fad2;
     padding: 2rem;
@@ -43,22 +41,19 @@
     cursor: pointer;
   }
   
-  /* Icon and heading wrapper */
 .icon-wrap {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Spacing between icon and heading */
+    gap: 1rem; 
     margin-bottom: 1rem;
   }
   
-  /* Icon Image */
   .icon-wrap img {
     width: 50px;
     height: 50px;
     object-fit: contain;
   }
   
-  /* Heading inside the wrap */
   .icon-wrap h2 {
     font-size: 1.2rem;
     font-weight: 600;
@@ -79,7 +74,6 @@
     margin: auto;
   }
   
-  /* Header */
   .choose-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -94,10 +88,9 @@
   .choose-header h1:last-child {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #ff2d75; /* Matching the pink color in the image */
+    color: #ff2d75; 
   }
   
-  /* Grid Layout */
   .homepage-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -115,7 +108,6 @@
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
   }
   
-  /* Reverse section */
   .homepage-section.reverse {
     grid-template-columns: 1fr 1fr;
     direction: rtl;
@@ -126,7 +118,6 @@
     direction: ltr;
   }
   
-  /* Image Styling */
   .homepage-section img {
     width: 80px;
     height: 80px;
@@ -134,7 +125,6 @@
     margin-right: 1rem;
   }
   
-  /* Text Content */
   .text-content h2 {
     font-size: 1.2rem;
     font-weight: 600;
@@ -148,7 +138,6 @@
     line-height: 1.5;
   }
   
-  /* Responsive */
   @media screen and (max-width: 768px) {
     .homepage-section,
     .homepage-section.reverse {

@@ -69,18 +69,18 @@ io.on("connection", (socket) => {
     });
 
     socket.on("joinCommunity", (user) => {
-        console.log("joinCommunity event received with user:", user); // ✅ Check if event is received
+        console.log("joinCommunity event received with user:", user); 
         if (!user?.id) {
-            console.log("❌ No user ID provided");
+            console.log("No user ID provided");
             return;
         }
     
         activeUsers.set(user.id, { 
           ...user, 
-          socketId: socket.id // Store correct socket ID
+          socketId: socket.id 
         });
     
-        console.log("✅ Active Users after join:", Array.from(activeUsers.values()));
+        console.log("Active Users after join:", Array.from(activeUsers.values()));
         io.emit("updateActiveUsers", Array.from(activeUsers.values()));
     });
     
@@ -99,15 +99,13 @@ io.on("connection", (socket) => {
 
     socket.on("profileUpdated", (updatedUser) => {
         console.log("Profile updated:", updatedUser);
-        io.emit("profileUpdated", updatedUser); // Broadcast update to all users
+        io.emit("profileUpdated", updatedUser); 
     });
 
     socket.on("messageDeleted", async (messageId) => {
         try {
-            // Delete message from the database
             await messageModel.findByIdAndDelete(messageId);
     
-            // Broadcast the deleted message ID to all connected clients
             io.emit("messageDeleted", messageId);
         } catch (error) {
             console.error("Error deleting message:", error);
@@ -117,10 +115,8 @@ io.on("connection", (socket) => {
 
     socket.on("deleteMessage", async (messageId) => {
         try {
-            // Delete from the database
             await messageModel.findByIdAndDelete(messageId);
     
-            // Emit event to all connected clients
             io.emit("messageDeleted", messageId); 
         } catch (error) {
             console.error("Error deleting message:", error);
@@ -129,8 +125,8 @@ io.on("connection", (socket) => {
       
     socket.on("deleteAllMessages", async () => {
         try {
-          await messageModel.deleteMany({}); // Delete from DB
-          io.emit("deleteAllMessages"); // Notify all users
+          await messageModel.deleteMany({}); 
+          io.emit("deleteAllMessages"); 
         } catch (error) {
           console.error("Error deleting messages:", error);
         }

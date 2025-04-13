@@ -7,7 +7,6 @@ export const detectEmotion = async (req, res) => {
             return res.status(400).json({ error: "Text is required" });
         }
 
-        // Send request to Python API (assuming it's running on port 5000)
         const response = await axios.post("http://127.0.0.1:5000/analyze", { text });
 
         return res.json(response.data);

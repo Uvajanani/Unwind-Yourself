@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 
 export const updateEmotionScore = async (req, res) => {
-  const { userId, source, emotion } = req.body; // source = "text" or "speech"
+  const { userId, source, emotion } = req.body; 
 
   if (!userId || !source || !emotion) {
     return res.status(400).json({ success: false, message: "Missing fields" });

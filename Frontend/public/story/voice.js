@@ -1,13 +1,11 @@
 let currentUtterance = null;
 
 function speakStory(text) {
-  // Stop any previous speech
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(text);
   const voices = window.speechSynthesis.getVoices();
 
-  // Try to use a calm female voice
   const calmVoice = voices.find(voice =>
     voice.name.includes("Google UK English Female") || voice.name.includes("Zira")
   );

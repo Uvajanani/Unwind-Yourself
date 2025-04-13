@@ -13,13 +13,11 @@ CORS(app)
 
 
 
-# === Setup ===
 genai.configure(api_key="AIzaSyDM9dN0Na5fS0ymucQxAktjxRlHixBHrkY")
 gemini_model = genai.GenerativeModel("models/gemini-1.5-pro-latest")
 whisper_model = whisper.load_model("base")
 DEEPGRAM_API_KEY = "b36cb0a9ce446eda1ce124a21279af5a586b092a"
 
-# === Assistant Route ===
 @app.route('/assistant', methods=['POST'])
 def assistant():
     try:
@@ -51,7 +49,6 @@ def assistant():
         print("🔥 Assistant route error:", e) 
         return jsonify({"error": str(e)}), 500
 
-# === Emotion Detection Route ===
 
 @app.route('/detect-emotion', methods=['POST'])
 def detect_emotion():
@@ -61,7 +58,6 @@ def detect_emotion():
     audio_file = request.files['audio']
     audio_path = "temp.wav"
 
-    # Convert webm to wav
     audio = AudioSegment.from_file(audio_file, format="webm")
     audio.export(audio_path, format="wav")
 
@@ -82,7 +78,6 @@ def detect_emotion():
 
     data = response.json()
 
-    # 👇 Add this to debug the full structure
     print("🔍 Deepgram response:", data)
 
     emotions = data.get("results", {}).get("channels", [{}])[0].get("alternatives", [{}])[0].get("emotions", {})

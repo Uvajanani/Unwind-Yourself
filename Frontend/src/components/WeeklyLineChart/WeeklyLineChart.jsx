@@ -9,7 +9,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-// Emotion weight map
 const emotionWeights = {
   joy: 100,
   surprise: 80,
@@ -24,7 +23,6 @@ const emotionWeights = {
 const WeeklyLineChart = ({ weeklyEmotionData }) => {
   if (!weeklyEmotionData || weeklyEmotionData.length === 0) return <p>Loading...</p>;
 
-  // Calculate EmotionScore from speech + text data for each day
   const computeScore = (text, speech) => {
     const allEmotions = new Set([...Object.keys(text), ...Object.keys(speech)]);
 
@@ -44,7 +42,6 @@ const WeeklyLineChart = ({ weeklyEmotionData }) => {
     return total === 0 ? 0 : Math.round(score / total);
   };
 
-  // Format for chart
   const chartData = weeklyEmotionData.map((dayData) => ({
     day: dayData.day,
     EmotionScore: computeScore(dayData.textEmotion, dayData.speechEmotion),

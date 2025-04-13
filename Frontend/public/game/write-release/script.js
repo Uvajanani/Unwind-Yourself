@@ -3,11 +3,11 @@ function changeBalloonColor() {
     const balloon = document.getElementById('balloon');
   
     if (mood === 'angry') {
-      balloon.style.background = '#ff4d4d'; // red
+      balloon.style.background = '#ff4d4d'; 
     } else if (mood === 'sad') {
-      balloon.style.background = '#4da6ff'; // blue
+      balloon.style.background = '#4da6ff';
     } else {
-      balloon.style.background = '#ff6b81'; // default
+      balloon.style.background = '#ff6b81'; 
     }
   }
   

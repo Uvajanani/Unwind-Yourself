@@ -1,4 +1,3 @@
-// story_templates.js
 
 const storyTemplates = {
     romance: ({ name, favPerson, pet, place, trait, food, timeOfDay, dreamWord, quote, music, weather }) => `
@@ -117,7 +116,6 @@ const storyTemplates = {
     `
   };
   
-  // main_script.js
   
   document.getElementById("storyForm").addEventListener("submit", function(e) {
     e.preventDefault();

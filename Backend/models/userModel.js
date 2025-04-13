@@ -47,7 +47,7 @@ const userSchema = new mongoose.Schema({
   badges: [{ type: String }],
 
   developedAreas: {
-    meditation: { type: Number, default: 0 },     // percentage like 0–100
+    meditation: { type: Number, default: 0 },     
     blogging: { type: Number, default: 0 },
     moodTracker: { type: Number, default: 0 }
   }

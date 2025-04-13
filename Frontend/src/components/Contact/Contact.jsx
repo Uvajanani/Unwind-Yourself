@@ -42,7 +42,6 @@ const Contact = () => {
 
       <div className="container">
         <div className="contact-card">
-          {/* Left Section */}
           <div className="left-section">
             <div className="form-section">
               <h2>Contact Us</h2>
@@ -92,7 +91,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Section */}
           <div className="right-section">
             <div className="details-section">
               <h2>Our Contact Details</h2>

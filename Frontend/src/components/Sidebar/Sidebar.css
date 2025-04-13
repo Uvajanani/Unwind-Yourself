@@ -1,5 +1,5 @@
 .sidebar {
-    width: 60px;  /* Default collapsed width */
+    width: 60px; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,12 +9,12 @@
     position: fixed;
     left: 0;
     top: 0;
-    transition: width 0.3s ease; /* Smooth width transition */
-    overflow: hidden;  /* Hide content when collapsed */
+    transition: width 0.3s ease; 
+    overflow: hidden;  
 }
 
 .sidebar.extended {
-    width: 200px; /* Expanded width */
+    width: 200px; 
 }
 
 .sidebar.extended .recent-entry p,

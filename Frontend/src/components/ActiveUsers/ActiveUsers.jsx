@@ -4,7 +4,7 @@ import "./ActiveUsers.css";
 import { assets, avatars } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 
-const socket = io("http://localhost:4000"); // Ensure this is your backend server URL
+const socket = io("http://localhost:4000");
 
 const ActiveUsers = ({ currentUser }) => {
   const [activeUsers, setActiveUsers] = useState([]);
@@ -12,23 +12,20 @@ const ActiveUsers = ({ currentUser }) => {
   useEffect(() => {
     console.log("🧐 Checking currentUser:", currentUser);
 
-    if (!currentUser?._id) return; // Ensure user exists
+    if (!currentUser?._id) return; 
 
-    // Emit event to join the community
     socket.emit("joinCommunity", {
       id: currentUser._id,
       name: currentUser.name,
-      avatar: currentUser.avatar || avatars.avatar1, // Ensure avatar is valid
+      avatar: currentUser.avatar || avatars.avatar1,
     });
 
-    // Listen for active users update from server
     socket.on("updateActiveUsers", (users) => {
       console.log("🔄 Updated Active Users:", users);
       setActiveUsers(users);
     });
 
     return () => {
-      // Emit event to leave community when component unmounts
       socket.emit("leaveCommunity", { id: currentUser._id });
       socket.off("updateActiveUsers");
     };

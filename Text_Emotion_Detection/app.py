@@ -3,41 +3,37 @@ import joblib
 import numpy as np
 from flask_cors import CORS
 
-# Load the trained model
-model_path = "model/text_emotion.pkl"  # Ensure this path is correct
+model_path = "model/text_emotion.pkl" 
 pipe_lr = joblib.load(model_path)
 
-# Define emotion emoji dictionary
 emotions_emoji_dict = {
     "anger": "😠", "disgust": "🤮", "fear": "😨😱", "happy": "🤗",
     "joy": "😂", "neutral": "😐", "sad": "😔", "sadness": "😔",
     "shame": "😳", "surprise": "😮"
 }
 
-# Initialize Flask app
 app = Flask(__name__)
 CORS(app)  
 
-# Function to predict emotion
 def predict_emotions(text):
     prediction = pipe_lr.predict([text])[0]
-    probability = pipe_lr.predict_proba([text])[0]  # Get probability scores
+    probability = pipe_lr.predict_proba([text])[0] 
     return prediction, probability
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.json
-    print("Received request data:", data)  # ✅ Log incoming data
+    print("Received request data:", data) 
 
     text = data.get("text", "")
 
     if not text:
-        print("No text provided!")  # ✅ Debug if empty
+        print("No text provided!")
         return jsonify({"error": "No text provided"}), 400
 
     try:
         predicted_emotion, probabilities = predict_emotions(text)
-        print("Predicted emotion:", predicted_emotion)  # ✅ Log prediction
+        print("Predicted emotion:", predicted_emotion)
 
         response = {
             "text": text,
@@ -52,7 +48,7 @@ def analyze():
         return jsonify(response)
     
     except Exception as e:
-        print("Prediction error:", str(e))  # ✅ If model prediction fails
+        print("Prediction error:", str(e))  
         return jsonify({
             "predicted_emotion": "unknown",
             "botReply": "Something went wrong."

@@ -13,7 +13,6 @@ export const saveTextEmotion = async (req, res) => {
   
       const newEmotions = emotionData?.probabilities || {};
   
-      // Check if user already has stored textEmotions
       if (user.textEmotions && Object.keys(user.textEmotions).length > 0) {
         const averagedEmotions = {};
   
@@ -21,13 +20,11 @@ export const saveTextEmotion = async (req, res) => {
           const existingValue = user.textEmotions[emotion] || 0;
           const newValue = newEmotions[emotion] || 0;
   
-          // Simple average (or you could use weighted average based on usage count if needed)
           averagedEmotions[emotion] = ((existingValue + newValue) / 2).toFixed(4);
         }
   
         user.textEmotions = averagedEmotions;
       } else {
-        // First time storing emotions
         user.textEmotions = newEmotions;
       }
   
