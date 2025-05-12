@@ -26,17 +26,7 @@
     font-size: 1rem;
   }
   
-  button {
-    background-color: #ff80ab;
-    color: white;
-    cursor: pointer;
-    border: none;
-    transition: background 0.3s;
-  }
   
-  button:hover {
-    background-color: #ff4081;
-  }
   
   #storyResult {
     margin-top: 2rem;
@@ -58,7 +48,7 @@
   }
   
   .audio-controls button:hover {
-    background-color: #b11365;
+    background-color: #c592ac;
   }
   
   

@@ -4,18 +4,22 @@ import React, { useContext } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
 import { Context } from '../../context/Context'
+import { useNavigate } from 'react-router-dom'
 
 
 const Main = () => {
 
     const { onSent, recentPrompt, showResult, loading, resultData, setInput, input } = useContext(Context)
-
-
+    const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : { avatar: "avatar2.png" };
+    const navigate = useNavigate()
+  
     return (
         <div className='main'>
             <div className="nav">
                 <p>Unwind Yourself</p>
-                <img src={assets.user_icon} alt="" />
+                <img onClick={() => navigate("/edit-profile")} src={`/avatars/${user.avatar}`} alt="User Avatar" />
             </div>
             <div className="main-container">
 
@@ -23,8 +27,8 @@ const Main = () => {
 
                     ? <>
                         <div className="greet">
-                            <p><span>Hello,Buddy.</span></p>
-                            <p></p>
+                            <h1><span>Hello,Buddy💖! Happy to Welcome you!</span></h1>
+                            
                         </div>
                         
 
@@ -32,14 +36,13 @@ const Main = () => {
                     </>
                     : <div className='result'>
                         <div className="result-title">
-                            <img src={assets.user_icon} alt="" />
+                            <img src={`/avatars/${user.avatar}`} alt="User Avatar"  />
                             <p>{recentPrompt}</p>
                         </div>
 
                         <div className="result-data">
                             {loading
                                 ? <div className='loader'>
-                                    <hr />
                                     <hr />
                                     <hr />
                                 </div>

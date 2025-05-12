@@ -1,0 +1,64 @@
+<!-- Homepage with 5 journal template options -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overthinker's Journal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f4ed;
+      color: #333;
+    }
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    button {
+      background: linear-gradient(145deg, #f9e4b7, #f7caca);
+      border: none;
+      border-radius: 20px;
+      padding: 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #ffe0a3, #f5bebe);
+    }
+
+    button:nth-child(1) { background: #FDEBD0; color: #784212; }
+    button:nth-child(2) { background: #D6EAF8; color: #154360; }
+    button:nth-child(3) { background: #FADBD8; color: #641E16; }
+    button:nth-child(4) { background: #E8DAEF; color: #512E5F; }
+    button:nth-child(5) { background: #D5F5E3; color: #145A32; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📓 Choose Your Journal Template</h1>
+    <div class="template-grid">
+      <button onclick="location.href='template1.html'">🗓 Classic Daily Planner</button>
+      <button onclick="location.href='template2.html'">⭐ Top Priorities Journal</button>
+      <button onclick="location.href='template3.html'">💖 Gratitude Journal</button>
+      <button onclick="location.href='template4.html'">🧠 Mind Dump Space</button>
+      <button onclick="location.href='template5.html'">🧘‍♀️ Self-Care Journal</button>
+    </div>
+  </div>
+</body>
+</html>

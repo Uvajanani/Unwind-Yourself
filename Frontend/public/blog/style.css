@@ -1,9 +1,4 @@
-body {
-  margin: 0;
-  background-color: white;
-  color: rgb(9, 7, 7);
-  font-family: 'Segoe UI', sans-serif;
-}
+
 
 .heading {
   text-align: center;
@@ -64,8 +59,8 @@ body {
   }
   
   .blog-card:hover {
-    transform: scale(1.03);
-    background-color: #2c2c2c;
+    transform: scale(0.2);
+    background-color: #e2d5d5;
   }
   
   

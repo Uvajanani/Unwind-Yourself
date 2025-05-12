@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gratitude Journal</title>
+  <style>
+    body {
+      background-color: #FFF5E1;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      color: #5E412F;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fffaf3;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 12px;
+      border: 1px solid #d4c4a6;
+      font-size: 1rem;
+      background-color: #fffcf6;
+    }
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border: none;
+      background: #E8C39E;
+      color: #fff;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #D9A066;
+    }
+    .saved-entry {
+      background: #fff4dc;
+      padding: 18px;
+      border-left: 4px solid #d9a066;
+      margin-top: 25px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💖 Gratitude Journal for the Overthinker</h1>
+    <label for="date">Date</label>
+    <input type="date" id="date">
+
+    <label for="gratitude">3 Things I'm Grateful For</label>
+    <textarea id="gratitude" rows="3" placeholder="What warmed your heart today?"></textarea>
+
+    <label for="thoughts">Gentle Thoughts That Brought Me Peace</label>
+    <textarea id="thoughts" rows="3" placeholder="Even in the whirl of thoughts, what moment calmed your mind?"></textarea>
+
+    <label for="note">A Note to My Overthinking Mind</label>
+    <textarea id="note" rows="4" placeholder="Write a kind note to yourself... remind your thoughts that it's okay to slow down."></textarea>
+
+    <button onclick="saveEntry()">💾 Save Reflection</button>
+
+    <div id="savedEntries"></div>
+  </div>
+
+  <script>
+    function saveEntry() {
+      const date = document.getElementById('date').value;
+      const gratitude = document.getElementById('gratitude').value;
+      const thoughts = document.getElementById('thoughts').value;
+      const note = document.getElementById('note').value;
+
+      const entry = `
+        <div class="saved-entry">
+          <strong>Date:</strong> ${date}<br>
+          <strong>Grateful For:</strong><br> ${gratitude.replace(/\n/g, '<br>')}<br>
+          <strong>Peaceful Thoughts:</strong><br> ${thoughts.replace(/\n/g, '<br>')}<br>
+          <strong>Note to Myself:</strong><br> ${note.replace(/\n/g, '<br>')}
+        </div>
+      `;
+
+      const savedDiv = document.getElementById('savedEntries');
+      savedDiv.innerHTML = entry + savedDiv.innerHTML;
+
+      document.getElementById('date').value = '';
+      document.getElementById('gratitude').value = '';
+      document.getElementById('thoughts').value = '';
+      document.getElementById('note').value = '';
+    }
+  </script>
+</body>
+</html>

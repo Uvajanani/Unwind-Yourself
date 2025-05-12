@@ -51,7 +51,7 @@ const ContextProvider = ({ children }) => {
 
     const detectEmotion = async (text) => {
         try {
-            const response = await fetch('http://127.0.0.1:5000/analyze', {
+            const response = await fetch('http://127.0.0.1:5001/analyze', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ text }),
@@ -90,56 +90,50 @@ const ContextProvider = ({ children }) => {
         setResultData("");
         setLoading(true);
         setShowResult(true);
-      
-        let response;
+    
         let message = prompt !== undefined ? prompt : input;
-      
+    
         setRecentPrompt(message);
         if (prompt === undefined) {
-          setPrevPrompts(prev => [...prev, input]);
+            setPrevPrompts(prev => [...prev, input]);
         }
-      
+    
         try {
-          response = await run(message);
-      
-          console.log("API Response:", response);
-      
-          let botReply = response.botReply || "Something went wrong.";
-          let responseArray = botReply.split("**");
-          let newResponse = "";
-      
-          for (let i = 0; i < responseArray.length; i++) {
-            newResponse += (i % 2 === 1) ? `<b>${responseArray[i]}</b>` : responseArray[i];
-          }
-      
-          let newResponse2 = newResponse.replace(/\*/g, "<br>");
-          let newResponseArray = newResponse2.split(" ");
-      
-          for (let i = 0; i < newResponseArray.length; i++) {
-            delayPara(i, newResponseArray[i] + " ");
-          }
-      
-          const emotionResult = {
-            predicted_emotion: response.predictedEmotion,
-            emoji: response.emoji,
-            probabilities: response.probabilities,
-            text: botReply,
-          };
-      
-          setEmotionData(emotionResult);
-      
-          if (emotionResult && id) {
-            await saveTextEmotion(id, emotionResult);
-          }
-      
+            const emotionResult = await detectEmotion(message);
+            console.log("Detected emotion:", emotionResult);
+            setEmotionData(emotionResult);
+    
+            if (emotionResult && id) {
+                await saveTextEmotion(id, emotionResult);
+            }
+    
+            const response = await run(message);
+            console.log("API Response:", response);
+    
+            let botReply = response.botReply || "Something went wrong.";
+            let responseArray = botReply.split("**");
+            let newResponse = "";
+    
+            for (let i = 0; i < responseArray.length; i++) {
+                newResponse += (i % 2 === 1) ? `<b>${responseArray[i]}</b>` : responseArray[i];
+            }
+    
+            let newResponse2 = newResponse.replace(/\*/g, "<br>");
+            let newResponseArray = newResponse2.split(" ");
+    
+            for (let i = 0; i < newResponseArray.length; i++) {
+                delayPara(i, newResponseArray[i] + " ");
+            }
+    
         } catch (error) {
-          console.error("Error in onSent:", error);
-          setResultData("Error processing request.");
+            console.error("Error in onSent:", error);
+            setResultData("Error processing request.");
         } finally {
-          setLoading(false);
-          setInput("");
+            setLoading(false);
+            setInput("");
         }
-      };
+    };
+    
           
 
     const contextValue = {

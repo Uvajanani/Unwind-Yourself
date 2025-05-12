@@ -16,8 +16,7 @@ import PrivacyPage from './pages/PrivacyPage/PrivacyPage'
 import Voice from './components/Voice-Assistant/Voice'
 import DashBoard from './components/DashBoard/DashBoard'
 import Badges from './components/Badges/Badges'
-import StoryGenerator from './components/StoryGenerator/Entertainment'
-import Entertainment from './components/StoryGenerator/Entertainment'
+import Entertainment from './components/Entertainment/Entertainment'
 
 
 const App = () => {
@@ -44,7 +43,6 @@ const App = () => {
           <Route path='/voice' element={<Voice/>}/>
           <Route path='/dashboard' element={<DashBoard userId={id}/>}/>
           <Route path='/badges' element={<Badges/>}/>
-          <Route path='/story' element={<StoryGenerator/>}/>
           <Route path='/entertainment' element={<Entertainment/>}/>
         </Routes>
       </div>

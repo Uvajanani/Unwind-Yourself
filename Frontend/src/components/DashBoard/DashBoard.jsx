@@ -17,6 +17,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(
   CategoryScale,
@@ -34,6 +35,10 @@ const DashBoard = ({userId}) => {
         blogging: 0,
         moodTracker: 0,
       });
+
+      const handleJournaldirect = () => {
+        window.location.href = "/journal/index.html";
+      };
     
       useEffect(() => {
         console.log("Fetching developed areas for userId:", userId); 
@@ -154,7 +159,21 @@ useEffect(() => {
   if (userId) fetchMonthlyEmotionData();
 }, [userId]);
 
-     
+  const user = localStorage.getItem("user")
+  ? JSON.parse(localStorage.getItem("user"))
+  : {
+      name: "Guest",
+      overthinkingScore: 0,
+      avatar: "default.png",
+    };
+
+  const getLevel = (score) => {
+    if (score <= 10) return "Low";
+    if (score <= 20) return "Medium";
+    return "High";
+  };  
+
+  const navigate = useNavigate()
 
 
   return (
@@ -165,13 +184,13 @@ useEffect(() => {
                 <img src={assets.logo} alt="" />
             </div>
             <div className='dashboard-header-title'>
-                <h1>Welcome, Buddy</h1>
+                <h1>Welcome, {user.name}</h1>
                 <p>Your personal dashboard overview</p>
             </div>
         </div>
 
         <div className='dashboard-header-right'>
-            <img src={assets.profile} alt="" />
+            <img onClick={() => navigate("/edit-profile")} src={`/avatars/${user.avatar}`} alt="User Avatar"/>
         </div>
       </div>
 
@@ -181,19 +200,19 @@ useEffect(() => {
                     <h1>Profile</h1>
                 </div>
                 <div className='dashboard-profile-img'>
-                    <img src={assets.profile} alt="" />
+                    <img src={`/avatars/${user.avatar}`} alt="User Avatar" />
                 </div>
                 <div className='dashboard-profile-title'>
-                    <h1>John</h1>
+                    <h1>{user.name}</h1>
                 </div>
                 <div className='dashboard-profile-tracker'>
                     <div className='dashboard-profile-tracker-item'>
                         <img src={assets.established} alt="" />
-                        <p>Medium</p>
+                        <p>{getLevel(user.overthinkingScore)}</p>
                     </div>
                     <div className='dashboard-profile-tracker-item'>
                         <img src={assets.brain} alt="" />
-                        <p>13</p>
+                        <p>{user.overthinkingScore}</p>
                     </div>
                 </div>
             </div>
@@ -288,15 +307,28 @@ useEffect(() => {
 
         <div className='badge-journal'>
             <div className='dashboard-badges'>
+              <div className='dashboard-badge-title'>
                 <h3>Badges</h3>
-                <div className='badge-item'>
+                <img onClick={() => navigate("/badges")} src={assets.plus} alt="" />
+              </div>
+                
+                <p>No badges received yet</p>
+                {/* <div className='badge-item'>
                     <img src={assets.badge1} alt="" />
                     <p>Best Performer</p>
                 </div>
                 <div className='badge-item'>
                     <img src={assets.badge2} alt="" />
                     <p>Best Emotion Handler</p>
-                </div>
+                </div> */}
+            </div>
+
+            <div className='journal'>
+                  <div className='journal-title'>
+                    <h3>Journal</h3>
+                  </div>
+                  <button onClick={handleJournaldirect} className='journal-button'>Click here to write your jurnal</button>
+                  
             </div>
 
         </div>

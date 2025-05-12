@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Care Journal</title>
+  <style>
+    body {
+      background-color: #e6f4ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2e2e2e;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #3b7d4e;
+      margin-bottom: 30px;
+    }
+    label {
+      margin-top: 20px;
+      display: block;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #2d5c3d;
+      text-align: left;
+    }
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border-radius: 12px;
+      border: 1px solid #b0ccb9;
+      background-color: #f4faf6;
+      font-size: 1rem;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #56a773;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #3b7d4e;
+    }
+    .entry-box {
+      margin-top: 30px;
+      background: #dcf4e4;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #56a773;
+      line-height: 1.6;
+      text-align: left;
+    }
+    strong {
+      color: #255336;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧘‍♀️ Self-Care Journal</h1>
+
+    <label for="kindness">How were you kind to yourself today?</label>
+    <textarea id="kindness" rows="3" placeholder="You deserve kindness from yourself too..."></textarea>
+
+    <label for="energy">What energized your soul today?</label>
+    <textarea id="energy" rows="3" placeholder="Was it music, nature, or something simple?"></textarea>
+
+    <label for="rest">Did you allow yourself to rest?</label>
+    <textarea id="rest" rows="3" placeholder="Rest isn't laziness. It's necessary."></textarea>
+
+    <button onclick="saveEntry()">💾 Save Entry</button>
+
+    <div id="savedEntries"></div>
+  </div>
+
+  <script>
+    function saveEntry() {
+      const kindness = document.getElementById('kindness').value;
+      const energy = document.getElementById('energy').value;
+      const rest = document.getElementById('rest').value;
+
+      if (kindness.trim() === '' && energy.trim() === '' && rest.trim() === '') return;
+
+      const entry = `
+        <div class="entry-box">
+          <strong>🫶 Self-Kindness:</strong><br>${kindness.replace(/\n/g, '<br>')}<br><br>
+          <strong>✨ What Sparked Energy:</strong><br>${energy.replace(/\n/g, '<br>')}<br><br>
+          <strong>🛌 Rest & Recharge:</strong><br>${rest.replace(/\n/g, '<br>')}
+        </div>
+      `;
+
+      const savedDiv = document.getElementById('savedEntries');
+      savedDiv.innerHTML = entry + savedDiv.innerHTML;
+
+      document.getElementById('kindness').value = '';
+      document.getElementById('energy').value = '';
+      document.getElementById('rest').value = '';
+    }
+  </script>
+</body>
+</html>

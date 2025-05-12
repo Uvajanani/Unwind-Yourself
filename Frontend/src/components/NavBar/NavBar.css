@@ -100,3 +100,10 @@
 .nav-profile-dropdown li:hover{
     color: rgb(47, 73, 239);
 }
+
+.navbar-profile .userProfile  {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

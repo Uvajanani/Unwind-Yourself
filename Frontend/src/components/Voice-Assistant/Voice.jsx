@@ -34,12 +34,20 @@ const Voice = () => {
           const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
           const formData = new FormData();
           formData.append('audio', audioBlob, 'recording.webm');
+          const checkIfJSON = (res) => res.headers.get("content-type")?.includes("application/json");
 
             try {
               const res = await fetch('http://127.0.0.1:5000/assistant', {
                 method: 'POST',
                 body: formData,
               });
+
+              if (!checkIfJSON(res)) {
+                const html = await res.text();
+                console.error("❌ Expected JSON, got HTML:", html);
+                throw new Error("Backend returned non-JSON (possibly HTML). See console.");
+              }
+              
               const data = await res.json();
               setResponse(data.reply);
           

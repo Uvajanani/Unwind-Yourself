@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Dump Space</title>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #3b3b3b;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 720px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    h1 {
+      text-align: center;
+      color: #334e68;
+    }
+    label {
+      margin-top: 20px;
+      display: block;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    textarea {
+      width: 100%;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 14px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background-color: #f9fbfd;
+      resize: vertical;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 28px;
+      background-color: #5f99f7;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #397cd3;
+    }
+    .entry-box {
+      margin-top: 35px;
+      background: #e3f2fd;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #5f99f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Mind Dump Space</h1>
+    <label for="dump">Release the Chaos:</label>
+    <textarea id="dump" rows="10" placeholder="No judgment. No filter. Just let it out..."></textarea>
+
+    <button onclick="saveDump()">💾 Save This Dump</button>
+
+    <div id="savedDumps"></div>
+  </div>
+
+  <script>
+    function saveDump() {
+      const dump = document.getElementById('dump').value;
+
+      if (dump.trim() === '') return;
+
+      const dumpBox = `
+        <div class="entry-box">
+          <strong>Mind Unload:</strong><br>
+          ${dump.replace(/\n/g, '<br>')}
+        </div>
+      `;
+
+      const savedDiv = document.getElementById('savedDumps');
+      savedDiv.innerHTML = dumpBox + savedDiv.innerHTML;
+
+      document.getElementById('dump').value = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Priorities Journal</title>
+  <style>
+    body {
+      background-color: #E8F6F3;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #145A32;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fafffd;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      display: block;
+      margin: 25px auto 0;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border: none;
+      background: #A2D9CE;
+      color: #145A32;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #76D7C4;
+    }
+    .saved-entry {
+      background: #eefefb;
+      padding: 15px;
+      border-left: 4px solid #48C9B0;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⭐ Top Priorities Journal</h1>
+    <label for="date">Date</label>
+    <input type="date" id="date">
+
+    <label for="top3">Top 3 Priorities Today</label>
+    <textarea id="top3" rows="3" placeholder="What are your top goals for today?"></textarea>
+
+    <label for="reason">Why Are These Important?</label>
+    <textarea id="reason" rows="3" placeholder="Your motivation and reason behind your choices..."></textarea>
+
+    <label for="action">Action Steps</label>
+    <textarea id="action" rows="4" placeholder="How do you plan to achieve them?"></textarea>
+
+    <button onclick="saveEntry()">💾 Save Entry</button>
+
+    <div id="savedEntries"></div>
+  </div>
+
+  <script>
+    function saveEntry() {
+      const date = document.getElementById('date').value;
+      const top3 = document.getElementById('top3').value;
+      const reason = document.getElementById('reason').value;
+      const action = document.getElementById('action').value;
+
+      const entry = `
+        <div class="saved-entry">
+          <strong>Date:</strong> ${date}<br>
+          <strong>Top Priorities:</strong><br> ${top3.replace(/\n/g, '<br>')}<br>
+          <strong>Reason:</strong><br> ${reason.replace(/\n/g, '<br>')}<br>
+          <strong>Action Steps:</strong><br> ${action.replace(/\n/g, '<br>')}
+        </div>
+      `;
+
+      const savedDiv = document.getElementById('savedEntries');
+      savedDiv.innerHTML = entry + savedDiv.innerHTML;
+
+      // Clear fields
+      document.getElementById('date').value = '';
+      document.getElementById('top3').value = '';
+      document.getElementById('reason').value = '';
+      document.getElementById('action').value = '';
+    }
+  </script>
+</body>
+</html>

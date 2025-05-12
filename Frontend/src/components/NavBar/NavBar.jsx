@@ -10,6 +10,13 @@ const NavBar = () => {
     const [active, setActive] = useState("home")
     const navigate = useNavigate();
     const {token, setToken} = useContext(Context)
+    const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : {
+      name: "Guest",
+      overthinkingScore: 0,
+      avatar: "default.png",
+    };
 
     const logout = () => {
       localStorage.removeItem("token")
@@ -48,7 +55,7 @@ const NavBar = () => {
         </Link>
       ) : (
         <div className="navbar-profile">
-          <img src={assets.profile} alt="Profile" /> 
+          <img className='userProfile' src={`/avatars/${user.avatar}`}  alt="Profile" /> 
           <ul className="nav-profile-dropdown">
             <li onClick={() => navigate('/dashBoard')}>
               <img src={assets.dashboard} alt="Dashboard" />

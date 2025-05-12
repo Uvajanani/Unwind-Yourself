@@ -105,6 +105,9 @@
     cursor: not-allowed;
 }
 
+.questions-box button:hover:not(:disabled) {
+    background: #5a4bfe;
+}
 
 .input-group {
     display: flex;

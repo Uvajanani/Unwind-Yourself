@@ -40,14 +40,22 @@
 
 .main .greet{
     margin: 1px 0px;
-    font-size:50px;
+    font-size:20pxpx;
     color: #c4c7c5;
     font-weight: 500;
-    padding: 20px;
+    padding: 50px;
+    
+}
+
+.main .greet h1{
+    font-size: 30px;
+    font-weight: 500;
+    color: #af7fed;
+    margin: 0px;
 }
 
 .main .greet span{
-    background: -webkit-linear-gradient(16deg,#e44bff,#acff46);
+    background: #b1adb5;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -180,7 +188,7 @@
     border-radius: 4px;
     border: none;
     background: color #f6f7f8;
-    background: linear-gradient(to right,#a0f883,#fffffffc,#bdff9e);
+    background: linear-gradient(to right,#debbd3,#fffffffc,#bdff9e);
     background-size: 800px 50px;
     height: 20px;
     animation: loader 3s infinite linear;
@@ -189,7 +197,7 @@
 .nav p {
     font-size: 20px;
     font-weight: 500;
-    background: linear-gradient(16deg, #d2ff4b, #469cff);
+    background: linear-gradient(16deg, #4bffba, #469cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

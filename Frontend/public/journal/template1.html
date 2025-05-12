@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Daily Planner</title>
+  <style>
+    body {
+      background-color: #FDEBD0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #5A3E1B;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff8ee;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      display: block;
+      margin: 25px auto 0;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border: none;
+      background: #F5CBA7;
+      color: #5A3E1B;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #F0B27A;
+    }
+    .saved-entry {
+      background: #fdf6ec;
+      padding: 15px;
+      border-left: 4px solid #F5B041;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗓 Classic Daily Planner</h1>
+    <label for="date">Date</label>
+    <input type="date" id="date">
+
+    <label for="todo">5 Things To Do</label>
+    <textarea id="todo" rows="4" placeholder="Write your tasks here..."></textarea>
+
+    <label for="plan">Plan for the Day</label>
+    <textarea id="plan" rows="4" placeholder="Outline your schedule or goals..."></textarea>
+
+    <label for="reflection">Thoughts or Reflection</label>
+    <textarea id="reflection" rows="4" placeholder="Write how you feel..."></textarea>
+
+    <button onclick="saveEntry()">💾 Save Entry</button>
+
+    <div id="savedEntries"></div>
+  </div>
+
+  <script>
+    function saveEntry() {
+      const date = document.getElementById('date').value;
+      const todo = document.getElementById('todo').value;
+      const plan = document.getElementById('plan').value;
+      const reflection = document.getElementById('reflection').value;
+
+      const entry = `
+        <div class="saved-entry">
+          <strong>Date:</strong> ${date}<br>
+          <strong>To-Do:</strong><br> ${todo.replace(/\n/g, '<br>')}<br>
+          <strong>Plan:</strong><br> ${plan.replace(/\n/g, '<br>')}<br>
+          <strong>Reflection:</strong><br> ${reflection.replace(/\n/g, '<br>')}
+        </div>
+      `;
+
+      const savedDiv = document.getElementById('savedEntries');
+      savedDiv.innerHTML = entry + savedDiv.innerHTML;
+
+      // Optionally clear fields after save
+      document.getElementById('date').value = '';
+      document.getElementById('todo').value = '';
+      document.getElementById('plan').value = '';
+      document.getElementById('reflection').value = '';
+    }
+  </script>
+</body>
+</html>
